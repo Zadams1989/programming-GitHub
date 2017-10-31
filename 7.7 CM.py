@@ -43,8 +43,4 @@ i = 0
 for author in datapoint1:
     print('%-20s|%23d' % (author, datapoint2[i]))
     i = i + 1
-print('')
-k = 0
-for writer in datapoint1:
-    print('%20s' % writer, '*' * datapoint2[k])
-    k = k + 1
+
