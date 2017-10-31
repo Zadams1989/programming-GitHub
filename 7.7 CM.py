@@ -47,4 +47,4 @@ print('')
 k = 0
 for writer in datapoint1:
     print('%20s' % writer, '*' * datapoint2[k])
-
+    k = k + 1
