@@ -11,7 +11,7 @@ user_data = input('Enter a data point (-1 to stop input):\n')
 datapoint1 = []
 datapoint2 = []
 
-while user_data != '-1':
+while user_data != '-1'
     if ',' not in user_data:
         print('Error: No comma in string.\n')
         user_data = input('Enter a data point (-1 to stop input):\n')
