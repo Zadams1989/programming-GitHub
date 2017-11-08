@@ -30,4 +30,3 @@ while user_input != 'q':
     else:
         print('Unrecognized command. Try again.')
         user_input = input(menu)
-
