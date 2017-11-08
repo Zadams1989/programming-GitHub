@@ -1,0 +1,32 @@
+menu = ('GROCERY LIST\n'
+        'a - Add item to grocery list\n'
+        'r - Remove item from grocery list\n'
+        'd - Display grocery list\n'
+        's - Sort grocery list\n'
+        'q - quit\n\n'
+        'Enter Command:\n')
+user_input = input(menu)
+grocery_list = []
+while user_input != 'q':
+    if user_input == 'a':
+        grocery_item = input('Enter new grocery item:\n')
+        grocery_list.append(grocery_item)
+        print('')
+        user_input = input(menu)
+    
+    elif user_input == 'r':
+        delete_item = input('Enter item to be deleted:\n')
+        grocery_list.remove(delete_item)
+        print('')
+        user_input = input(menu)
+    elif user_input == 'd':
+        print(grocery_list)
+        print('')
+        user_input = input(menu)
+    elif user_input == 's':
+        print(grocery_list.sort())
+        print('')
+        user_input = input(menu)
+    else:
+        print('Unrecognized command. Try again.')
+        user_input = input(menu)
