@@ -1,0 +1,40 @@
+rain1 = int(input('Enter January rainfall:\n'))
+rain2 = int(input('Enter February rainfall:\n'))
+rain3 = int(input('Enter March rainfall:\n'))
+rain4 = int(input('Enter April rainfall:\n'))
+rain5 = int(input('Enter May rainfall:\n'))
+rain6 = int(input('Enter June rainfall:\n'))
+rain7 = int(input('Enter July rainfall:\n'))
+rain8 = int(input('Enter August rainfall:\n'))
+rain9 = int(input('Enter September rainfall:\n'))
+rain10 = int(input('Enter October rainfall:\n'))
+rain11 = int(input('Enter November rainfall:\n'))
+rain12 = int(input('Enter December rainfall\n'))
+
+def monthly_totals(jan=rain1, feb=rain2, march=rain2, april=rain4, may=rain5,
+                   june=rain6, july=rain7, aug=rain8, sep=rain9, octo=rain10,
+                   nov=rain11, dec=rain12):
+    raintotals = [jan, feb, march, april, may, june, july, aug, sep, octo,
+                  nov, dec]
+    return raintotals
+monthly_rain = monthly_totals()
+
+def rainfall_calculations(rain=monthly_rain):
+    annual_rain=sum(rain)
+    monthly_average = sum(rain) / len(rain)
+    highest_rain = max(rain)
+    lowest_rain = min(rain)
+    return annual_rain, monthly_average, highest_rain, lowest_rain
+
+rain_stats = rainfall_calculations()
+total_annual_rain = rain_stats[0]
+annual_monthly_average = rain_stats[1]
+heaviest_rain = rain_stats[2]
+lowest_rain = rain_stats[3]
+
+print('Rainfall for each calendar month:')
+print(monthly_rain)
+print('Total rain for the year:', total_annual_rain)
+print('Average monthly rainfall for the year:', annual_monthly_average)
+print('Heaviest amount of rainfall in a single month:', heaviest_rain)
+print('Lowest amount of rainfall in a single month:', lowest_rain)
