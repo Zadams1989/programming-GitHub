@@ -1,0 +1,67 @@
+players = {}
+jersey1 = int(input('Enter player 1\'s jersey number:\n'))
+rating1 = int(input('Enter player 1\'s rating:\n'))
+print('')
+jersey2 = int(input('Enter player 2\'s jersey number:\n'))
+rating2 = int(input('Enter player 2\'s rating:\n'))
+print('')
+jersey3 = int(input('Enter player 3\'s jersey number:\n'))
+rating3 = int(input('Enter player 3\'s rating:\n'))
+print('')
+jersey4 = int(input('Enter player 4\'s jersey number:\n'))
+rating4 = int(input('Enter player 4\'s rating:\n'))
+print('')
+jersey5 = int(input('Enter player 5\'s jersey number:\n'))
+rating5 = int(input('Enter player 5\'s rating:\n'))
+print('')
+players[jersey1] = rating1
+players[jersey2] = rating2
+players[jersey3] = rating3
+players[jersey4] = rating4
+players[jersey5] = rating5
+jersey_numbers = sorted(players.keys())
+print('ROSTER')
+for jersey in jersey_numbers:
+    print('Jersey number: %d, Rating: %d' % (jersey, players[jersey]))
+menu = ('MENU\na - Add player\nd - Remove player\nu - Update player rating\n'
+'r - Output players above a rating\no - Output roster\nq - Quit\n\nChoose an option:\n')
+print('')
+user_input = input(menu)
+while user_input != 'q':
+    if user_input == 'o':
+        print('')
+        print('ROSTER')
+        jersey_numbers = sorted(players.keys())
+        for jersey in jersey_numbers:
+            print('Jersey number: %d, Rating: %d' % (jersey, players[jersey]))
+        print('')
+        user_input = input(menu)
+    elif user_input == 'a':
+        print('')
+        new_jersey = int(input('Enter a new player\'s jersey number:\n'))
+        new_rating = int(input('Enter the player\'s rating:\n'))
+        players[new_jersey] = new_rating
+        print('')
+        user_input = input(menu)
+    elif user_input == 'd':
+        print('')
+        del_player = int(input('Enter a jersey number:\n'))
+        del players[del_player]
+        print('')
+        user_input = input(menu)
+    elif user_input == 'u':
+        print('')
+        update_player = int(input('Enter a jersey number:\n'))
+        update_ranking = int(input('Enter a new rating for player:\n'))
+        players[update_player] = update_ranking
+        print('')
+        user_input = input(menu)
+    elif user_input == 'r':
+        print('')
+        desired_rating = int(input('Enter a rating:\n'))
+        print('ABOVE', desired_rating)
+        for jersey, rating in players.items():
+            if rating > desired_rating:
+                print('Jersey number: %d, Rating: %d' % (jersey, rating))
+        print('')
+        user_input = input(menu)
