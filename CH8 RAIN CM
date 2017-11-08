@@ -38,4 +38,4 @@ print('Total rain for the year:', total_annual_rain)
 print('Average monthly rainfall for the year:', annual_monthly_average)
 print('Heaviest amount of rainfall in a single month:', heaviest_rain)
 print('Lowest amount of rainfall in a single month:', lowest_rain)
-print()
+
