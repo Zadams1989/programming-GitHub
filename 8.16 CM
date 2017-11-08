@@ -1,0 +1,16 @@
+weight1 = float(input('Enter weight 1:\n'))
+weight2 = float(input('Enter weight 2:\n'))
+weight3 = float(input('Enter weight 3:\n'))
+weight4 = float(input('Enter weight 4:\n'))
+
+weights = [weight1, weight2, weight3, weight4]
+print('Weights:', weights)
+print('')
+print('Average weight: %.2f' % (sum(weights) / len(weights)))
+print('Max weight: %.2f' % max(weights))
+print('')
+user_index = int(input('Enter a list index (1 - 4):\n'))
+print('Weight in pounds: %.2f' % weights[user_index-1])
+print('Weight in kilograms: %.2f' % (weights[user_index-1] / 2.2))
+print('')
+print('Sorted list:', sorted(weights))
