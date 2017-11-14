@@ -90,3 +90,5 @@ if __name__ == "__main__":
     print(item2)
     print('')
     print('Total: $%d' % totalpurchase)
+    
+    
