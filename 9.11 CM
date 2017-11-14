@@ -1,0 +1,92 @@
+class ItemToPurchase:
+    def __init__(self, name='none', price=0, quantity=0, description='none'):
+        self.item_name = name
+        self.item_price = price
+        self.item_quantity = quantity
+        self.item_description = description
+        
+    def __str__(self):
+        return '%s %d @ $%.0f = $%.0f' % (self.item_name, self.item_quantity,
+                                          self.item_price,
+                                          self.item_price * self.item_quantity)
+        
+    def print_item_description():
+        print('%s: %s' % (self.item_name, self.item_description))
+
+class ShoppingCart:
+    def __init__(self, name='none', date='January 1, 2016', items=[]):
+        self.customer_name = name
+        self.current_date = date
+        self.cart_items = items
+    def add_item():
+        print('ADD ITEM TO CART')
+        cartitemname = str(input('Enter the item name:\n'))
+        cartitemdesc = str(input('Enter the item description:\n'))
+        cartitemprice = input('Enter the item price:\n')
+        cartitemquan = input('Enter the item quantity:\n')
+        cartitem = ItemToPurchase(cartitemname, cartitemprice, cartitemquan,
+                                  cartitemdesc)
+        self.cart_items.append([cartitem[0], cartitem[1], cartitem[2],
+                                cartitem[3]])
+    def remove_item():
+        print('REMOVE ITEM FROM CART')
+        itemtoremove = input('Enter name of item to remove:\n')
+        for item in self.cart_items:
+            if itemtoremove in item:
+                self.cart_items.remove(item)
+        else:
+            print('Item not found in cart. Nothing modified')
+    def modify_item():
+        print('MODIFY ITEM IN CART')
+        itemtomodify = input('Enter name of item to modify:\n')
+        for item in self.cart_items:
+            if itemtomodify in item:
+                self.cart_items.remove(item)
+                cartitemname = str(input('Enter the item name:\n'))
+                cartitemdesc = str(input('Enter the item description:\n'))
+                cartitemprice = input('Enter the item price:\n')
+                cartitemquan = input('Enter the item quantity:\n')
+                cartitem = ItemToPurchase(cartitemname, cartitemprice,
+                                          cartitemquan, cartitemdesc)
+                self.cart_items.append([cartitem[0], cartitem[1],
+                                        cartitem[2], cartitem[3]])
+    def get_num_items_in_cart():
+        i = 0
+        for i in self.cart_items:
+            i += 1
+        print('Number of items in cart:', i)
+
+    def get_cost_of_cart():
+        totalcost = 0
+        for item in self.cart_items:
+            totalcost += item[1]
+        print('Total cost of all items in cart:', totalcost)
+    def print_total():
+        totalcost = 0
+        for item in self.cart_items:
+            totalcost += item[1]
+        print('Total cost of all items in cart:', totalcost)
+    def print_description():
+        for item in self.cart_items:
+            print(item[0], '-', item[3])
+        
+
+if __name__ == "__main__":
+    item1name = str(input('Item 1\nEnter the item name:\n'))
+    item1price = float(input('Enter the item price:\n'))
+    item1quantity = int(input('Enter the item quantity:\n'))
+    item1total = item1price * item1quantity
+    
+    item2name = str(input('\nItem 2\nEnter the item name:\n'))
+    item2price = float(input('Enter the item price:\n'))
+    item2quantity = int(input('Enter the item quantity:\n'))
+    item2total = item2price * item2quantity
+    totalpurchase = int(item1total + item2total)
+    
+    item1 = ItemToPurchase(item1name, item1price, item1quantity)
+    item2 = ItemToPurchase(item2name, item2price, item2quantity)
+    print('\nTOTAL COST')
+    print(item1)
+    print(item2)
+    print('')
+    print('Total: $%d' % totalpurchase)
