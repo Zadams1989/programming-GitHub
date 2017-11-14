@@ -30,3 +30,4 @@ print('Here is the data that you have entered')
 print('Manufacturer: ' + phone.get_manufact())
 print('Model Number: ' + phone.get_model())
 print('Retail Price: $' + '%.2f' % phone.get_retail_price())
+
