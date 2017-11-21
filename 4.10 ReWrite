@@ -1,0 +1,41 @@
+with open('davysmenu.txt', 'w') as menu:
+   menu.write('Davy\'s auto shop services\n')
+   menu.write('Oil change -- $35\n')
+   menu.write('Tire rotation -- $19\n')
+   menu.write('Car wash -- $7\n')
+   menu.write('Car wax -- $12\n')
+
+with open('davysmenu.txt', 'r') as prices:
+   shop_prices = prices.read()
+   print(shop_prices)
+
+service_costs = {'Oil change' : 35, 'Tire rotation' : 19, 'Car wash' : 7, 'Car wax' : 12, '-' : 0}
+first_service = input('Select first service:\n')
+second_service = input('Select second service:\n')
+print('')
+print('Davy\'s auto shop invoice')
+print('')
+if first_service == 'Oil change':
+    print('Service 1: Oil change, $35')
+elif first_service == 'Tire rotation':
+    print('Service 1: Tire rotation, $19')
+elif first_service == 'Car wash':
+    print('Service 1: Car wash, $7')
+elif first_service == 'Car wax':
+    print('Service 1: Car wax, $12')
+elif first_service == '-':
+    print('Service 1: No service')
+
+if second_service == 'Oil change':
+    print('Service 2: Oil change, $35')
+elif second_service == 'Tire rotation':
+    print('Service 2: Tire rotation, $19')
+elif second_service == 'Car wash':
+    print('Service 2: Car wash, $7')
+elif second_service == 'Car wax':
+    print('Service 2: Car wax, $12')
+elif second_service == '-':
+    print('Service 2: No service')
+print('')
+total_cost = service_costs[first_service] + service_costs[second_service]
+print('Total: $%d' % total_cost)
