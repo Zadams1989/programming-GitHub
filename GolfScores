@@ -1,0 +1,10 @@
+golfer_name = '-'
+with open('golf.txt', 'a') as scores:
+    golfer_name = input('Enter golfer name (\'q\' to quit):\n')
+    while golfer_name != 'q':
+        golfer_score = str(input('Enter golfer score:\n'))
+        scores.write(golfer_name)
+        scores.write(' ')
+        scores.write(golfer_score)
+        scores.write('\n')
+        golfer_name = input('Enter golfer name (\'q\' to quit):\n')
