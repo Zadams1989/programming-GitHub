@@ -1,0 +1,27 @@
+arrow_base_height = int(input('Enter arrow base height:\n'))
+
+arrow_base_width = int(input('Enter arrow base width:\n'))
+
+arrow_head_width = int(input('Enter arrow head width:\n'))
+print('')
+
+with open('arrow.txt', 'w') as drawpad:
+    while arrow_head_width <= arrow_base_width:
+       arrow_head_width = int(input('Enter arrow head width:\n'))
+       print('')
+
+with open('arrow.txt', 'w') as drawpad:
+    i = 0
+    while i < arrow_base_height:
+        i = i + 1
+        drawpad.write('*' * arrow_base_width)
+        drawpad.write('\n')
+        j = arrow_head_width
+    while j > 0:
+        drawpad.write('*' * j)
+        drawpad.write('\n')
+        j = j - 1
+
+with open('arrow.txt', 'r') as drawing:
+    arrow = drawing.read()
+    print(arrow)
