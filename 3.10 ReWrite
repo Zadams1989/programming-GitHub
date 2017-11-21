@@ -1,0 +1,26 @@
+favoriteColor = input('Enter favorite color:\n')
+petName = input('Enter pet\'s name:\n')
+userNumber = input('Enter a number:\n')
+print('You entered:', favoriteColor, petName, userNumber)
+password1 = '%s_%s' % (favoriteColor, petName)
+print('\nFirst password:', password1)
+password2 = '%s%s%s' % (userNumber, favoriteColor, userNumber)
+print('Second password:', password2)
+print('')
+
+with open('pwphrases.txt', 'w+') as pw:
+    pw.write(favoriteColor)
+    pw.write(' ')
+    pw.write(petName)
+    pw.write(' ')
+    pw.write(userNumber)
+
+with open('pwphrases.txt', 'r') as pwdoc:
+    phrases = pwdoc.readline()
+    pwphrases = phrases.split()
+    print('First password: %s_%s' % (pwphrases[0], pwphrases[1]))
+    print('Second password: %s%s%s' % (pwphrases[2], pwphrases[0], pwphrases[2]))
+
+print('')
+print('Number of characters in %s:' % password1, len(password1))
+print('Number of characters in %s:' % password2, len(password2))
